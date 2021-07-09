@@ -11,11 +11,11 @@
 <body>
     <nav>
         <div class="container">
-            <div class="navbar">
-                <a href="#home" class="menu active"><i class="fa fa-2x fa-home "></i></a>
-                <a href="#about" class="menu "><i class="fa fa-2x fa-user-graduate "></i></a>
-                <a href="#skill" class="menu "><i class="fa fa-2x fa-code "></i></a>
-                <a href="#projects" class="menu "><i class="fa fa-2x fa-desktop "></i></a>
+            <div class="navbar" id="navbar">
+                <a data-scroll="home" href="#home" class="menu"><i class="fa fa-2x fa-home home active"></i></a>
+                <a data-scroll="about"href="#about" class="menu"><i class="fa fa-2x fa-user-graduate about"></i></a>
+                <a data-scroll="skill"href="#skill" class="menu"><i class="fa fa-2x fa-code skill"></i></a>
+                <a data-scroll="projects"href="#projects" class="menu"><i class="fa fa-2x fa-desktop projects"></i></a>
             </div>
         </div>
     </nav>
@@ -38,6 +38,11 @@
                     <h3>based in &nbsp<span id="spec">north rhine westphalia</span></h3>
                 </div>
             </div>
+            <a href="#about" class="arrow-container">
+                <div class="arrow"></div>
+                <div class="arrow"></div>
+                <div class="arrow"></div>  
+            </a>
         </div>
     </section>
 
@@ -71,15 +76,15 @@
                 <table class="table-edu">
                     <tr>
                         <td>2017 - Today</td>
-                        <td>Westfälische Hochschule<br><span>B. Sc. Media Computer Science</span></td>
+                        <td class="edu">Westfälische Hochschule<br><span>B. Sc. Media Computer Science</span></td>
                     </tr>
                     <tr>
                         <td>2014 - 2016</td>
-                        <td>HAWK Göttingen<br><span>Electrical Engineering</span></td>
+                        <td class="edu">HAWK Göttingen<br><span>Electrical Engineering</span></td>
                     </tr>
                     <tr>
                         <td>2012 - 2014</td>
-                        <td>BBSII Göttingen<br><span>FOI Computer Science</span></td>
+                        <td class="edu">BBSII Göttingen<br><span>Computer Science</span></td>
                     </tr>
                 </table>
             </div>
@@ -92,59 +97,91 @@
         </div>
         <div class="content">
             <div class="left">
-                <div class="skill">
+                <div class="skill-i">
                     <div class="icon">
                         <i class="fab fa-4x fa-html5"></i>
                     </div>
                     <p>HTML 5</p>
                 </div>
-                <div class="skill">
+                <div class="skill-i">
                     <div class="icon">
                         <i class="fab fa-4x fa-css3-alt"></i>
                     </div>
                     <p>CSS 3</p>
                 </div>
-                <div class="skill">
+                <div class="skill-i">
                     <div class="icon">
                         <i class="fab fa-4x fa-sass"></i>
                     </div>
                     <p>SASS</p>
                 </div>
-                <div class="skill">
+                <div class="skill-i">
                     <div class="icon">
                         <i class="fab fa-4x fa-js-square"></i>
                     </div>
                     <p>JavaScript</p>
                 </div>
-                <div class="skill">
+                <div class="skill-i">
                     <div class="icon">
                         <i class="fab fa-4x fa-react"></i>
                     </div>
                     <p>ReactJS</p>
                 </div>
-                <div class="skill">
+                <div class="skill-i">
                     <div class="icon">
                         <i class="fab fa-4x fa-java"></i>
                     </div>
                     <p>Java</p>
                 </div>
-                <div class="skill">
+                <div class="skill-i">
                     <div class="icon">
                         <i class="fab fa-4x fa-git-alt"></i>
                     </div>
                     <p>Git</p>
                 </div>
-                <div class="skill">
+                <div class="skill-i">
                     <div class="icon">
                         <img style="width:4.5em" src="https://img.icons8.com/material-rounded/96/000000/adobe-photoshop.png"/>
                     </div>
                     <p>Photoshop</p>
                 </div>
-                <div class="skill">
+                <div class="skill-i">
                     <div class="icon">
                         <img style="width: 4em" src="https://img.icons8.com/ios-filled/100/000000/adobe-xd.png"/>
                     </div>
                     <p>Adobe Xd</p>
+                </div>
+            </div>
+            <div class="left">
+                <div class="skill-i">
+                    <div class="icon">
+                        <i class="fas fa-4x fa-calendar-alt"></i>
+                    </div>
+                    <p>Time Management</p>
+                </div>
+                <div class="skill-i">
+                    <div class="icon">
+                        <i class="fas fa-4x fa-puzzle-piece"></i>
+                    </div>
+                    <p>Adaptability</p>
+                </div>
+                <div class="skill-i">
+                    <div class="icon">
+                        <i class="fas fa-4x fa-user-friends"></i>
+                    </div>
+                    <p>Team Work</p>
+                </div>
+                <div class="skill-i">
+                    <div class="icon">
+                        <i class="fas fa-4x fa-palette"></i>
+                    </div>
+                    <p>Creativity</p>
+                </div>
+                <div class="skill-i">
+                    <div class="icon">
+                        <i class="fas fa-4x fa-chalkboard-teacher"></i>
+                    </div>
+                    <p>Curiosity</p>
                 </div>
             </div>
         </div>
@@ -155,39 +192,49 @@
             <h2>Projects</h2>
         </div>
         <div class="content">
-            <div class="card">
-                <div class="card-content">
-                    <h2 class="card-title">XYZProjekt</h2>
-                    <p class="card-body">Hier habe ich das gebaut</p>
-                    <a href="#" class="btn">View</a>
-                    <a href="#" class="btn">Code</a>
+            <a href="https://bohnel.github.io/launch-countdown-timer-main/" target="#">
+                <div class="card count">
+                    <div class="card-content">
+                        <h2 class="card-title">Countdown</h2>
+                        <p class="card-body">Simple JavaScript countdown</p>
+                    </div>
                 </div>
-            </div>
-            <div class="card">
-                <div class="card-content">
-                    <h2 class="card-title">XYZProjekt</h2>
-                    <p class="card-body">Hier habe ich das gebaut</p>
-                    <a href="#" class="btn">View</a>
-                    <a href="#" class="btn">Code</a>
+            </a>
+            <a href="https://bohnel.github.io/Planets/" target="#">
+                <div class="card planet">
+                    <div class="card-content">
+                        <h2 class="card-title">Planets</h2>
+                        <p class="card-body">Planet facts with API call</p>
+                    </div>
                 </div>
-            </div>
-            <div class="card">
-                <div class="card-content">
-                    <h2 class="card-title">XYZProjekt</h2>
-                    <p class="card-body">Hier habe ich das gebaut</p>
-                    <a href="#" class="btn">View</a>
-                    <a href="#" class="btn">Code</a>
+            </a>
+            <a href="https://bohnel.github.io/PokeDex/" target="#">
+                <div class="card poke">
+                    <div class="card-content">
+                        <h2 class="card-title">PokeDex</h2>
+                        <p class="card-body">Pokemon list with API call</p>
+                    </div>
                 </div>
-            </div>
+            </a>
+            <a href="https://bohnel.github.io/ping-coming-soon-page-master/" target="#">
+                <div class="card coming">
+                    <div class="card-content">
+                        <h2 class="card-title">Coming soon</h2>
+                        <p class="card-body">Mockup product release page</p>
+                    </div>
+                </div>
+            </a>
         </div>
     </section>
 
     <section id="footer" class="sections">
         <div class="contact">
-            <i class="fab fa-3x fa-github-square"></i>
-            <i class="fab fa-3x fa-linkedin"></i>
-            <i class="fas fa-3x fa-envelope-square"></i>
+            <a href=""><i class="fab fa-3x fa-github-square"></i></a>
+            <a href=""><i class="fab fa-3x fa-linkedin"></i></a>
+            <a href=""><i class="fas fa-3x fa-envelope-square"></i></a>
         </div>
     </section>
+
+    <script src="app.js"></script>
 </body>
 </html>

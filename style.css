@@ -4,6 +4,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -24,6 +25,8 @@ body {
 .title {
   display: flex;
   width: 75%;
+  margin-left: 10em;
+  min-width: 35em;
   justify-content: center;
   align-items: center;
 }
@@ -56,6 +59,62 @@ body {
   margin-left: -1.6em;
   height: 15.5em;
   color: #999;
+}
+
+.arrow-container {
+  display: block;
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotateZ(0deg);
+}
+.arrow-container:hover {
+  cursor: pointer;
+}
+.arrow-container:hover .arrow {
+  top: 50%;
+}
+.arrow-container:hover .arrow:before {
+  transform: translate(-50%, -50%) rotateZ(-30deg);
+}
+.arrow-container:hover .arrow:after {
+  transform: translate(-50%, -50%) rotateZ(30deg);
+}
+
+.arrow {
+  position: absolute;
+  left: 50%;
+  transition: all 0.4s ease;
+}
+.arrow:before, .arrow:after {
+  transition: all 0.4s ease;
+  content: "";
+  display: block;
+  position: absolute;
+  transform-origin: bottom right;
+  background: #7e7979;
+  width: 0.2em;
+  height: 2em;
+  border-radius: 10px;
+  transform: translate(-50%, -50%) rotateZ(-45deg);
+}
+.arrow:after {
+  transform-origin: bottom left;
+  transform: translate(-50%, -50%) rotateZ(45deg);
+}
+.arrow:nth-child(1) {
+  opacity: 0.3;
+  top: 35%;
+}
+.arrow:nth-child(2) {
+  opacity: 0.6;
+  top: 55%;
+}
+.arrow:nth-child(3) {
+  opacity: 0.9;
+  top: 75%;
 }
 
 .container {
@@ -95,6 +154,9 @@ body {
   padding: 0.2em 0.6em;
   overflow: hidden;
 }
+.container .navbar i.active {
+  color: #de5052;
+}
 .container .navbar i:hover {
   color: #de5052;
   transition: all 200ms ease;
@@ -110,7 +172,7 @@ body {
   align-items: center;
   transform: skewY(2deg);
   z-index: 0;
-  margin: 5em;
+  margin-bottom: 10em;
 }
 
 .about {
@@ -119,40 +181,43 @@ body {
   justify-content: space-around;
   align-items: center;
 }
-
-.about-card {
+.about .about-card {
   line-height: 2em;
   background-color: #999;
   width: 30em;
-  height: 18em;
+  min-width: 28em;
   border-radius: 1em;
   padding: 2em;
+  margin: 1em;
 }
-
-table {
+.about table {
   margin: 1.5em 0;
 }
-
-td {
+.about td {
   padding: 0 1em;
 }
-
-.table-edu tr {
+.about .edu {
+  line-height: 1.5em;
+}
+.about .table-edu tr {
   background-color: #999999;
+  line-height: 4em;
 }
 
 .left {
   display: flex;
   justify-content: space-around;
+  margin-bottom: 3em;
+  min-width: 45em;
 }
 
-.skill {
+#skill .skill-i {
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
 }
-.skill:after {
+#skill .skill-i:after {
   content: "";
   position: absolute;
   height: 0.15em;
@@ -164,11 +229,10 @@ td {
   transition: transform 350ms ease;
   background: #de5052;
 }
-.skill:hover:after {
+#skill .skill-i:hover:after {
   transform: scaleX(1);
 }
-
-.icon {
+#skill .icon {
   width: 6em;
   height: 6em;
   display: flex;
@@ -176,15 +240,15 @@ td {
   align-items: center;
   border-radius: 50%;
 }
-.icon i:hover {
+#skill .icon i:hover {
   transform: scale(1.2);
   transition: transform 200ms ease;
 }
-.icon img:hover {
+#skill .icon img:hover {
   transform: scale(1.2);
   transition: transform 200ms ease;
 }
-.icon img {
+#skill .icon img {
   filter: invert(100%);
 }
 
@@ -198,20 +262,28 @@ td {
 
 .content {
   width: 80%;
-  height: 30em;
+  margin-bottom: 8em;
 }
 
 #projects .content {
   display: grid;
-  grid-auto-flow: column;
-  justify-content: space-around;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  justify-content: space-between;
   align-items: center;
+}
+@media screen and (max-width: 1300px) {
+  #projects .content {
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+    justify-items: center;
+  }
 }
 #projects .card {
   color: white;
-  background-color: white;
-  padding: 9em 0 0;
-  max-width: 35ch;
+  background-size: cover;
+  padding: 9.3em 0 0;
+  margin: 2em;
+  width: 23em;
   height: 16em;
   border-radius: 0.5rem;
   overflow: hidden;
@@ -222,6 +294,7 @@ td {
 #projects .card:hover {
   transform: scale(1.05);
   box-shadow: 5px 5px 15px 5px rgba(255, 255, 255, 0.15);
+  filter: brightness(1);
 }
 #projects .card:hover .card-content {
   transform: translateY(0);
@@ -233,8 +306,8 @@ td {
 #projects .card-content {
   padding: 1rem;
   background: linear-gradient(rgba(0, 0, 0, 0), black);
-  transform: translateY(45%);
-  line-height: 2em;
+  transform: translateY(42%);
+  line-height: 2.5em;
   transition: all 500ms ease;
 }
 #projects .card-title {
@@ -244,7 +317,7 @@ td {
 #projects .card-title:after {
   content: "";
   position: absolute;
-  height: 5px;
+  height: 4px;
   bottom: -4px;
   left: -1rem;
   width: calc(100% + 1rem);
@@ -252,6 +325,26 @@ td {
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 500ms ease;
+}
+
+.count {
+  background: url(./src/countdown.png);
+  filter: brightness(0.95);
+}
+
+.planet {
+  background: url(./src/planets.png);
+  filter: brightness(0.9);
+}
+
+.poke {
+  background: url(./src/pokedex.png);
+  filter: brightness(0.8);
+}
+
+.coming {
+  background: url(./src/coming.png);
+  filter: brightness(0.8);
 }
 
 a {
@@ -262,62 +355,37 @@ a {
 #footer {
   height: 5em;
   background-color: #999;
+  display: flex;
+  margin-top: 10em;
+  justify-content: center;
+}
+#footer .contact {
+  display: flex;
+  width: 20%;
+  justify-content: space-around;
 }
 
-@media screen and (max-width: 1025px) and (min-width: 620px) {
+@media screen and (max-width: 1015px) {
   .container {
-    width: 100%;
     height: 4em;
-    top: calc(100vh - 4em);
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
   }
   .container .navbar {
-    height: 100%;
     flex-direction: row;
-    border-bottom-right-radius: 0;
-    border-top-left-radius: 0.5em;
-    box-shadow: 0px -4px 15px 0px rgba(0, 0, 0, 0.4);
-  }
-
-  .title h3 {
-    font-size: 1.5em;
-  }
-  .title .numbers {
-    font-size: 1.2em;
-    margin-left: -2.5em;
-  }
-  .title .line {
-    height: 10em;
-  }
-}
-@media screen and (max-width: 620px) {
-  .title h3 {
-    font-size: 1.5em;
-  }
-
-  .container {
+    justify-content: space-around;
+    background-color: #999;
+    align-items: center;
     width: 100%;
-    height: 4em;
-    top: calc(100vh - 4em);
-  }
-  .container .navbar {
     height: 100%;
-    flex-direction: row;
-    border-bottom-right-radius: 0;
-    border-top-left-radius: 0.5em;
-    box-shadow: 0px -4px 15px 0px rgba(0, 0, 0, 0.4);
-  }
-
-  td {
-    font-size: 0.8em;
-  }
-
-  .about-card {
-    width: 20em;
-    margin-bottom: 2em;
-  }
-
-  .content-about {
-    flex-direction: column;
+    box-shadow: 5px 4px 10px 0px rgba(0, 0, 0, 0.4);
+    z-index: 1;
   }
 }
 
