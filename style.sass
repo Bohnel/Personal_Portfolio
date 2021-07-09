@@ -1,0 +1,286 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:300,400,500')
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap')
+
+$bg:#313131 
+$neutral: #999
+$text-n: #fff
+$accent: #de5052
+
+*
+    box-sizing: border-box
+    margin: 0
+    padding: 0
+
+body
+    height: 100%
+    font-family: 'Source Code Pro', monospace
+    background-color: $bg
+    color: $text-n
+
+#home
+    display: flex
+    justify-content: center
+    align-items: center
+    height: 100vh
+    background-color: $bg
+
+.title
+    display: flex
+    width: 75%
+    justify-content: center
+    align-items: center
+    .text
+        display: flex
+        height: 100%
+    h3 
+        color: $text-n
+        font-size: 2.4em
+        font-weight: 400
+        line-height: 1.6em
+    #spec
+        color: $accent
+    .numbers
+        display: flex
+        flex-direction: column
+        align-items: flex-start
+        position: absolute
+        margin-left: -2.5em
+        font-size: 1.9em
+        line-height: 2.03em
+        color: $neutral
+    .line
+        display: flex
+        position: absolute
+        margin-left: -1.6em
+        height: 15.5em
+        color: $neutral
+
+.container
+    height: 100vh
+    width: 4em
+    position: fixed
+    top: 0
+    left: 0
+    display: flex
+    align-items: center
+    justify-content: center
+    z-index: 1
+    .navbar
+        display: flex
+        flex-direction: column
+        justify-content: space-around
+        background-color: $neutral
+        align-items: center
+        width: 100%
+        height: 30%
+        border-top-right-radius: .5em
+        border-bottom-right-radius: .5em
+        box-shadow: 5px 4px 10px 0px rgba(0,0,0,0.4)
+        z-index: 1
+        a:hover:before
+            content: ""
+            position: absolute
+            height: 2.8em
+            left: 0
+            width: .15em
+            background: $accent
+        i
+            color: $text-n
+            padding: .2em .6em
+            overflow: hidden
+            &:hover
+                color: $accent
+                transition: all 200ms ease
+
+.heading
+    width: 100%
+    background-color: $neutral
+    height: 5em
+    font-weight: bolder
+    display: flex
+    justify-content: center
+    align-items: center
+    transform: skewY(2deg)
+    z-index: 0
+    margin: 5em
+
+.about
+    display: flex
+    flex-direction: row
+    justify-content: space-around
+    align-items: center
+
+.about-card
+    line-height: 2em
+    background-color: $neutral
+    width: 30em
+    height: 18em
+    border-radius: 1em
+    padding: 2em
+table
+    margin: 1.5em 0
+td
+    padding: 0 1em
+.table-edu
+    tr
+        background-color: rgba(153, 153, 153, 1)
+
+.left
+    display: flex
+    justify-content: space-around
+
+.skill
+    display: flex
+    flex-direction: column
+    align-items: center
+    position: relative
+    &:after
+        content: ""
+        position: absolute
+        height: .15em
+        bottom: -4px
+        left: 0
+        width: 100%
+        transform: scaleX(0)
+        transform-origin: center
+        transition: transform 350ms ease
+        background: $accent
+    &:hover
+        &:after
+            transform: scaleX(1)
+
+.icon
+    // background-color: #999
+    width: 6em
+    height: 6em
+    display: flex
+    justify-content: center
+    align-items: center
+    border-radius: 50%
+    i:hover
+        transform: scale(1.2)
+        transition: transform 200ms ease
+    img:hover
+        transform: scale(1.2)
+        transition: transform 200ms ease
+    img
+        filter: invert(100%)
+
+.sections
+    height: 100%
+    display: flex
+    flex-direction: column
+    align-items: center
+    font-family: 'Montserrat', sans-serif
+
+.content
+    // background-color: #999
+    width: 80%
+    height: 30em
+
+#projects
+    .content
+        display: grid
+        grid-auto-flow: column
+        justify-content: space-around
+        align-items: center
+    .card
+        color: white
+        background-color: white
+        padding: 9em 0 0
+        max-width: 35ch
+        height: 16em
+        border-radius: .5rem
+        overflow: hidden
+        transition: all 500ms ease
+        box-shadow: 5px 5px 15px 5px rgba(255,255,255,.08)
+        cursor: pointer
+        &:hover
+            transform: scale(1.05)
+            box-shadow: 5px 5px 15px 5px rgba(255,255,255,.15)
+            .card-content
+                transform: translateY(0)
+                transition-delay: 400ms
+            .card-title::after
+                transform: scaleX(1)
+    .card-content
+        padding: 1rem
+        background: linear-gradient(hsl(0 0% 0% / 0), hsl(0 0% 0% / 1))
+        transform: translateY(45%)
+        line-height: 2em
+        transition: all 500ms ease
+    .card-title
+        position: relative
+        width: max-content
+        &:after
+            content: ""
+            position: absolute
+            height: 5px
+            bottom: -4px
+            left: 0 - 1rem
+            width: calc(100% + 1rem)
+            background: $accent
+            transform: scaleX(0)
+            transform-origin: left
+            transition: transform 500ms ease
+
+a
+    text-decoration: none
+    color: $text-n
+
+#footer
+    height: 5em
+    background-color: $neutral
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and ( max-width: 1025px ) and ( min-width: 620px )
+    .container
+        width: 100%
+        height: 4em
+        top: calc(100vh - 4em)
+        .navbar
+            height: 100%
+            flex-direction: row
+            border-bottom-right-radius: 0
+            border-top-left-radius: .5em
+            box-shadow: 0px -4px 15px 0px rgba(0,0,0,0.4)
+    .title
+        h3
+            font-size: 1.5em
+        .numbers
+            font-size: 1.2em
+            margin-left: -2.5em
+        .line
+            height: 10em
+
+@media screen and ( max-width: 620px )
+    .title
+        h3
+            font-size: 1.5em
+    .container
+        width: 100%
+        height: 4em
+        top: calc(100vh - 4em)
+        .navbar
+            height: 100%
+            flex-direction: row
+            border-bottom-right-radius: 0
+            border-top-left-radius: .5em
+            box-shadow: 0px -4px 15px 0px rgba(0,0,0,0.4)
+    td
+        font-size: .8em
+    .about-card
+        width: 20em
+        margin-bottom: 2em
+    .content-about
+        flex-direction: column
