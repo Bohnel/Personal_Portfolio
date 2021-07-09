@@ -333,7 +333,7 @@ body {
 }
 
 .planet {
-  background: url(./src/planets.png);
+  background: url(src/planets.png);
   filter: brightness(0.9);
 }
 
