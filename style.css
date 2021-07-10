@@ -366,7 +366,7 @@ section {
 }
 
 .planet {
-  background: url("/.src/planets.PNG");
+  background: url("./src/planets.PNG");
   filter: brightness(0.9);
 }
 
