@@ -175,6 +175,10 @@ body {
   margin-bottom: 10em;
 }
 
+section {
+  min-width: 940px;
+}
+
 .about {
   display: flex;
   flex-direction: row;
@@ -184,6 +188,7 @@ body {
 .about .about-card {
   line-height: 2em;
   background-color: #999;
+  position: relative;
   width: 30em;
   min-width: 28em;
   border-radius: 1em;
@@ -191,17 +196,41 @@ body {
   margin: 1em;
 }
 .about table {
-  margin: 1.5em 0;
+  border-collapse: collapse;
+  margin: 2em 0;
+  min-width: 400px;
 }
 .about td {
-  padding: 0 1em;
+  padding: 0.5em 1em;
 }
 .about .edu {
   line-height: 1.5em;
 }
+.about tr {
+  border-bottom: thin solid #fff;
+}
 .about .table-edu tr {
-  background-color: #999999;
   line-height: 4em;
+}
+.about tr:nth-of-type(even) {
+  background-color: #8f8f8f;
+}
+.about .action {
+  display: flex;
+  justify-content: center;
+}
+.about .btn {
+  padding: 0.7rem 3rem;
+  background: #fff;
+  color: #999;
+  cursor: pointer;
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 5em;
+}
+.about .btn:hover {
+  background: #de5052;
+  color: #313131;
 }
 
 .left {
@@ -210,7 +239,13 @@ body {
   margin-bottom: 3em;
   min-width: 45em;
 }
+.left:first-child {
+  margin-bottom: 4em;
+}
 
+#skill .content-mobile {
+  display: none;
+}
 #skill .skill-i {
   display: flex;
   flex-direction: column;
@@ -229,8 +264,19 @@ body {
   transition: transform 350ms ease;
   background: #de5052;
 }
+#skill .skill-i:hover i {
+  transform: scale(1.2);
+  transition: transform 200ms ease;
+}
+#skill .skill-i:hover img {
+  transform: scale(1.2);
+  transition: transform 200ms ease;
+}
 #skill .skill-i:hover:after {
   transform: scaleX(1);
+}
+#skill .skill-i p {
+  user-select: none;
 }
 #skill .icon {
   width: 6em;
@@ -240,20 +286,11 @@ body {
   align-items: center;
   border-radius: 50%;
 }
-#skill .icon i:hover {
-  transform: scale(1.2);
-  transition: transform 200ms ease;
-}
-#skill .icon img:hover {
-  transform: scale(1.2);
-  transition: transform 200ms ease;
-}
 #skill .icon img {
   filter: invert(100%);
 }
 
 .sections {
-  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -267,23 +304,17 @@ body {
 
 #projects .content {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(18em, 1fr));
   justify-content: space-between;
   align-items: center;
-}
-@media screen and (max-width: 1300px) {
-  #projects .content {
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 50% 50%;
-    justify-items: center;
-  }
 }
 #projects .card {
   color: white;
   background-size: cover;
   padding: 9.3em 0 0;
   margin: 2em;
-  width: 23em;
+  max-width: 23em;
+  min-width: 17em;
   height: 16em;
   border-radius: 0.5rem;
   overflow: hidden;
@@ -291,17 +322,19 @@ body {
   box-shadow: 5px 5px 15px 5px rgba(255, 255, 255, 0.08);
   cursor: pointer;
 }
-#projects .card:hover {
-  transform: scale(1.05);
-  box-shadow: 5px 5px 15px 5px rgba(255, 255, 255, 0.15);
-  filter: brightness(1);
-}
-#projects .card:hover .card-content {
-  transform: translateY(0);
-  transition-delay: 400ms;
-}
-#projects .card:hover .card-title::after {
-  transform: scaleX(1);
+@media screen and (min-width: 950px) {
+  #projects .card:hover {
+    transform: scale(1.05);
+    box-shadow: 5px 5px 15px 5px rgba(255, 255, 255, 0.15);
+    filter: brightness(1);
+  }
+  #projects .card:hover .card-content {
+    transform: translateY(0);
+    transition-delay: 400ms;
+  }
+  #projects .card:hover .card-title::after {
+    transform: scaleX(1);
+  }
 }
 #projects .card-content {
   padding: 1rem;
@@ -347,6 +380,11 @@ body {
   filter: brightness(0.8);
 }
 
+.movie {
+  background: url(./src/movie.PNG);
+  filter: brightness(0.8);
+}
+
 a {
   text-decoration: none;
   color: #fff;
@@ -356,13 +394,16 @@ a {
   height: 5em;
   background-color: #999;
   display: flex;
-  margin-top: 10em;
   justify-content: center;
 }
 #footer .contact {
   display: flex;
   width: 20%;
   justify-content: space-around;
+}
+#footer i:hover {
+  color: #de5052;
+  transition: all 200ms ease;
 }
 
 @media screen and (max-width: 1015px) {
@@ -385,7 +426,75 @@ a {
     width: 100%;
     height: 100%;
     box-shadow: 5px 4px 10px 0px rgba(0, 0, 0, 0.4);
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
     z-index: 1;
+  }
+}
+@media screen and (max-width: 1015px) and (max-width: 960px) {
+  .about {
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  section {
+    min-width: 100px;
+  }
+
+  .title {
+    min-width: 22em;
+    font-size: 0.6em;
+  }
+  .title .line {
+    height: 20em;
+  }
+
+  .about {
+    width: 100%;
+  }
+  .about .about-card {
+    width: 90%;
+    min-width: 20em;
+    overflow: hidden;
+  }
+  .about table {
+    min-width: 0;
+  }
+
+  #skill .content {
+    display: none;
+  }
+  #skill .content-mobile {
+    display: flex;
+    color: white;
+    width: 90%;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2em;
+  }
+  #skill .content-mobile ul {
+    margin: 2em;
+    list-style-type: none;
+  }
+  #skill .content-mobile li {
+    line-height: 2.2em;
+  }
+
+  .heading {
+    margin-bottom: 3em;
+  }
+
+  .card .card-content {
+    pointer-events: none;
+    transform: translateY(0);
+  }
+  .card .card-title::after {
+    transform: scaleX(1);
+  }
+
+  #footer i {
+    margin: 0 0.4em;
   }
 }
 
