@@ -106,15 +106,12 @@ body {
 }
 .arrow:nth-child(1) {
   opacity: 0.3;
-  top: 35%;
 }
 .arrow:nth-child(2) {
   opacity: 0.6;
-  top: 55%;
 }
 .arrow:nth-child(3) {
   opacity: 0.9;
-  top: 75%;
 }
 
 .container {
