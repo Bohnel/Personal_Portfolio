@@ -106,12 +106,15 @@ body {
 }
 .arrow:nth-child(1) {
   opacity: 0.3;
+  top: 35%;
 }
 .arrow:nth-child(2) {
   opacity: 0.6;
+  top: 55%;
 }
 .arrow:nth-child(3) {
   opacity: 0.9;
+  top: 75%;
 }
 
 .container {
@@ -358,27 +361,27 @@ section {
 }
 
 .count {
-  background: url(./src/countdown.PNG);
+  background: url("./src/countdown.PNG");
   filter: brightness(0.95);
 }
 
 .planet {
-  background: url(src/planets.PNG);
+  background: url(".src/planets.PNG");
   filter: brightness(0.9);
 }
 
 .poke {
-  background: url(./src/pokedex.PNG);
+  background: url("./src/pokedex.PNG");
   filter: brightness(0.8);
 }
 
 .coming {
-  background: url(./src/coming.PNG);
+  background: url("./src/coming.PNG");
   filter: brightness(0.8);
 }
 
 .movie {
-  background: url(./src/movie.PNG);
+  background: url("./src/movie.PNG");
   filter: brightness(0.8);
 }
 

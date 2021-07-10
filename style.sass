@@ -99,7 +99,7 @@ body
     @for $i from 1 through 3
         &:nth-child(#{$i}) 
             opacity: 0.3 * $i
-            // top: 15 + (100% * $i/5)
+            top: 15 + (100% * $i/5)
 
 .container
     height: 100vh
@@ -305,19 +305,19 @@ section
             transform-origin: left
             transition: transform 500ms ease
 .count
-    background: url(./src/countdown.PNG)
+    background: url("./src/countdown.PNG")
     filter: brightness(.95)
 .planet
-    background: url(src/planets.PNG)
+    background: url(".src/planets.PNG")
     filter: brightness(.9)
 .poke
-    background: url(./src/pokedex.PNG)
+    background: url("./src/pokedex.PNG")
     filter: brightness(.8)
 .coming
-    background: url(./src/coming.PNG)
+    background: url("./src/coming.PNG")
     filter: brightness(.8)
 .movie
-    background: url(./src/movie.PNG)
+    background: url("./src/movie.PNG")
     filter: brightness(.8)
 a
     text-decoration: none
