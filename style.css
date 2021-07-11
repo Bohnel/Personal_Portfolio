@@ -19,6 +19,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  width: 90%;
   background-color: #313131;
 }
 
@@ -60,6 +61,9 @@ body {
   height: 15.5em;
   color: #999;
 }
+.title .lastNumber {
+  display: none;
+}
 
 .arrow-container {
   display: block;
@@ -94,7 +98,7 @@ body {
   display: block;
   position: absolute;
   transform-origin: bottom right;
-  background: #7e7979;
+  background: #999;
   width: 0.2em;
   height: 2em;
   border-radius: 10px;
@@ -136,26 +140,60 @@ body {
   align-items: center;
   width: 100%;
   height: 30%;
+  z-index: 1;
   border-top-right-radius: 0.5em;
   border-bottom-right-radius: 0.5em;
   box-shadow: 5px 4px 10px 0px rgba(0, 0, 0, 0.4);
-  z-index: 1;
 }
-.container .navbar a:hover:before {
-  content: "";
+.container .navbar .link {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+@media screen and (min-width: 1015px) {
+  .container .navbar .link:hover .tooltip {
+    visibility: visible;
+    transition: all 0.4s ease;
+    transform: translateX(0);
+  }
+}
+.container .navbar .link .tooltip {
   position: absolute;
-  height: 2.8em;
-  left: 0;
-  width: 0.15em;
-  background: #de5052;
+  visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #999;
+  text-align: center;
+  width: 7em;
+  height: 3em;
+  left: 4em;
+  z-index: -1;
+  border-bottom-right-radius: 1em;
+  border-top-right-radius: 1em;
+  transform: translateX(-7em);
+}
+@media screen and (min-width: 1015px) {
+  .container .navbar a:hover:before {
+    content: "";
+    position: absolute;
+    height: 2.8em;
+    left: 0;
+    width: 0.15em;
+    background: #de5052;
+  }
 }
 .container .navbar i {
   color: #fff;
-  padding: 0.2em 0.6em;
+  padding: 0.2em 0.3em;
+  z-index: 1;
   overflow: hidden;
+  background-color: #999;
 }
 .container .navbar i.active {
   color: #de5052;
+  z-index: 1;
 }
 .container .navbar i:hover {
   color: #de5052;
@@ -172,11 +210,19 @@ body {
   align-items: center;
   transform: skewY(2deg);
   z-index: 0;
-  margin-bottom: 10em;
+  margin-bottom: 5em;
 }
 
 section {
-  min-width: 940px;
+  margin-top: 3em;
+  min-width: 930px;
+  width: 100%;
+}
+section:not(#header) {
+  margin-top: 0;
+}
+section:not(#footer) {
+  padding-top: 4em;
 }
 
 .about {
@@ -299,20 +345,18 @@ section {
 
 .content {
   width: 80%;
-  margin-bottom: 8em;
+  margin: 6em 0;
 }
 
 #projects .content {
   display: grid;
+  width: 90%;
   grid-template-columns: repeat(auto-fill, minmax(18em, 1fr));
-  justify-content: space-between;
-  align-items: center;
 }
 #projects .card {
   color: white;
   background-size: cover;
   padding: 9.3em 0 0;
-  margin: 2em;
   max-width: 23em;
   min-width: 17em;
   height: 16em;
@@ -335,6 +379,11 @@ section {
   #projects .card:hover .card-title::after {
     transform: scaleX(1);
   }
+}
+#projects .card-full {
+  display: flex;
+  justify-content: center;
+  margin: 2em;
 }
 #projects .card-content {
   padding: 1rem;
@@ -432,6 +481,10 @@ a {
   }
 }
 @media screen and (max-width: 1015px) and (max-width: 960px) {
+  #home {
+    width: 98%;
+  }
+
   .about {
     flex-direction: column;
     justify-content: space-around;
@@ -445,9 +498,10 @@ a {
   .title {
     min-width: 22em;
     font-size: 0.6em;
+    margin-left: 6em;
   }
-  .title .line {
-    height: 20em;
+  .title p {
+    line-height: 2em;
   }
 
   .about {
@@ -471,7 +525,7 @@ a {
     width: 90%;
     justify-content: center;
     align-items: center;
-    margin-bottom: 2em;
+    margin: 4em;
   }
   #skill .content-mobile ul {
     margin: 2em;
@@ -495,6 +549,19 @@ a {
 
   #footer i {
     margin: 0 0.4em;
+  }
+
+  #projects .card {
+    margin: 2em 0;
+    padding: 7em 0;
+  }
+}
+@media screen and (max-width: 1015px) and (max-width: 570px) {
+  .title .lastNumber {
+    display: flex;
+  }
+  .title .line {
+    height: 20em;
   }
 }
 

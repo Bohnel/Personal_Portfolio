@@ -12,10 +12,22 @@
     <nav>
         <div class="container">
             <div class="navbar" id="navbar">
-                <a data-scroll="home" href="#home" class="menu"><i class="fa fa-2x fa-home home active"></i></a>
-                <a data-scroll="about"href="#about" class="menu"><i class="fa fa-2x fa-user-graduate about"></i></a>
-                <a data-scroll="skill"href="#skill" class="menu"><i class="fa fa-2x fa-code skill"></i></a>
-                <a data-scroll="projects"href="#projects" class="menu"><i class="fa fa-2x fa-desktop projects"></i></a>
+                <div class="link">
+                    <a data-scroll="home" href="#home" class="menu""><i class="fa fa-2x fa-home home active"></i></a>
+                    <a href="#home"><span class="tooltip">Home</span></a>
+                </div>
+                <div class="link">
+                    <a data-scroll="about"href="#about" class="menu"><i class="fa fa-2x fa-user-graduate about"></i></a>
+                    <a href="#about"><span class="tooltip">About</span></a>
+                </div>
+                <div class="link">
+                    <a data-scroll="skill"href="#skill" class="menu"><i class="fa fa-2x fa-code skill"></i></a>
+                    <a href="#skill"><span class="tooltip">Skills</span></a>
+                </div>
+                <div class="link">
+                    <a data-scroll="projects"href="#projects" class="menu"><i class="fa fa-2x fa-desktop projects"></i></a>
+                    <a href="#prokects"><span class="tooltip">Projects</span></a>
+                </div>
             </div>
         </div>
     </nav>
@@ -28,14 +40,15 @@
                     <p>36</p>
                     <p>37</p>
                     <p>38</p>
+                    <p class="lastNumber">39</p>
                 </div>
                 <div class="line">
                     <hr>
                 </div>
                 <div class="name"><h3 id="name">Hi, i am</h3>
                     <h3 id="name">Max Ludwikowski</h3>
-                    <h3><span id="spec">front end</span>&nbsp developer</h3>
-                    <h3>based in &nbsp<span id="spec">north rhine westphalia</span></h3>
+                    <h3><span id="spec">front end</span> developer</h3>
+                    <h3>based in <span id="spec">north rhine westphalia</span></h3>
                 </div>
             </div>
             <a href="#about" class="arrow-container">
@@ -147,6 +160,12 @@
                 </div>
                 <div class="skill-i">
                     <div class="icon">
+                        <i class="fas fa-4x fa-database"></i>
+                    </div>
+                    <p>SQL</p>
+                </div>
+                <div class="skill-i">
+                    <div class="icon">
                         <img style="width:4.5em" src="https://img.icons8.com/material-rounded/96/000000/adobe-photoshop.png"/>
                     </div>
                     <p>Photoshop</p>
@@ -218,46 +237,56 @@
             <h2>Projects</h2>
         </div>
         <div class="content">
-            <a href="https://bohnel.github.io/launch-countdown-timer-main/" target="#">
-                <div class="card count">
-                    <div class="card-content">
-                        <h2 class="card-title">Countdown</h2>
-                        <p class="card-body">Simple JavaScript countdown</p>
+            <div class="card-full">
+                <a href="https://bohnel.github.io/launch-countdown-timer-main/" target="#">
+                    <div class="card count">
+                        <div class="card-content">
+                            <h2 class="card-title">Countdown</h2>
+                            <p class="card-body">Simple JavaScript countdown</p>
+                        </div>
                     </div>
-                </div>
-            </a>
-            <a href="https://bohnel.github.io/Planets/" target="#">
-                <div class="card planet">
-                    <div class="card-content">
-                        <h2 class="card-title">Planets</h2>
-                        <p class="card-body">Planet facts with API call</p>
+                </a>
+            </div>
+            <div class="card-full">
+                <a href="https://bohnel.github.io/Planets/" target="#">
+                    <div class="card planet">
+                        <div class="card-content">
+                            <h2 class="card-title">Planets</h2>
+                            <p class="card-body">Planet facts with API call</p>
+                        </div>
                     </div>
-                </div>
-            </a>
-            <a href="https://bohnel.github.io/PokeDex/" target="#">
-                <div class="card poke">
-                    <div class="card-content">
-                        <h2 class="card-title">PokeDex</h2>
-                        <p class="card-body">Pokemon list with API call</p>
+                </a>
+            </div>
+            <div class="card-full">
+                <a href="https://bohnel.github.io/PokeDex/" target="#">
+                    <div class="card poke">
+                        <div class="card-content">
+                            <h2 class="card-title">PokeDex</h2>
+                            <p class="card-body">Pokemon list with API call</p>
+                        </div>
                     </div>
-                </div>
-            </a>
-            <a href="https://bohnel.github.io/ping-coming-soon-page-master/" target="#">
-                <div class="card coming">
-                    <div class="card-content">
-                        <h2 class="card-title">Coming soon</h2>
-                        <p class="card-body">Mockup product release page</p>
+                </a>
+            </div>
+            <div class="card-full">
+                <a href="https://bohnel.github.io/ping-coming-soon-page-master/" target="#">
+                    <div class="card coming">
+                        <div class="card-content">
+                            <h2 class="card-title">Coming soon</h2>
+                            <p class="card-body">Mockup product release page</p>
+                        </div>
                     </div>
-                </div>
-            </a>
-            <a href="https://bohnel.github.io/MovieDB_React/" target="#">
-                <div class="card movie">
-                    <div class="card-content">
-                        <h2 class="card-title">MovieDB</h2>
-                        <p class="card-body">Movie Database React app</p>
+                </a>
+            </div>
+            <div class="card-full">
+                <a href="https://bohnel.github.io/MovieDB_React/" target="#">
+                    <div class="card movie">
+                        <div class="card-content">
+                            <h2 class="card-title">MovieDB</h2>
+                            <p class="card-body">Movie Database React app</p>
+                        </div>
                     </div>
-                </div>
-            </a>
+                </a>
+            </div>
         </div>
     </section>
 

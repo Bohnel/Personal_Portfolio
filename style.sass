@@ -23,6 +23,7 @@ body
     justify-content: center
     align-items: center
     height: 100vh
+    width: 90%
     background-color: $bg
 
 .title
@@ -57,6 +58,8 @@ body
         margin-left: -1.6em
         height: 15.5em
         color: $neutral
+    .lastNumber
+        display: none
 
 @mixin arrow-transitions($rot: 0deg) 
     transform: translate(-50%, -50%) rotateZ($rot)
@@ -88,7 +91,7 @@ body
         display: block
         position: absolute
         transform-origin: bottom right
-        background: #7e7979
+        background: $neutral
         width: .2em
         height: 2em
         border-radius: 10px
@@ -119,23 +122,54 @@ body
         align-items: center
         width: 100%
         height: 30%
+        z-index: 1
         border-top-right-radius: .5em
         border-bottom-right-radius: .5em
         box-shadow: 5px 4px 10px 0px rgba(0,0,0,0.4)
-        z-index: 1
-        a:hover:before
-            content: ""
-            position: absolute
-            height: 2.8em
-            left: 0
-            width: .15em
-            background: $accent
+        .link
+            position: relative
+            width: 100%
+            display: flex
+            justify-content: center
+            
+            &:hover
+                @media screen and ( min-width: 1015px )
+                    .tooltip
+                        visibility: visible
+                        transition: all .4s ease
+                        transform: translateX(0)
+            .tooltip
+                position: absolute
+                visibility: hidden
+                display: flex
+                align-items: center
+                justify-content: center
+                background-color: $neutral
+                text-align: center
+                width: 7em
+                height: 3em
+                left: 4em
+                z-index: -1
+                border-bottom-right-radius: 1em
+                border-top-right-radius: 1em
+                transform: translateX(-7em)
+        @media screen and ( min-width: 1015px )
+            a:hover:before
+                content: ""
+                position: absolute
+                height: 2.8em
+                left: 0
+                width: .15em
+                background: $accent
         i
             color: $text-n
-            padding: .2em .6em
+            padding: .2em .3em
+            z-index: 1
             overflow: hidden
+            background-color: $neutral
             &.active
                 color: $accent
+                z-index: 1
             &:hover
                 color: $accent
                 transition: all 200ms ease
@@ -150,9 +184,15 @@ body
     align-items: center
     transform: skewY(2deg)
     z-index: 0
-    margin-bottom: 10em
+    margin-bottom: 5em
 section
-    min-width: 940px
+    &:not(#header)
+        margin-top: 0
+    &:not(#footer)
+        padding-top: 4em
+    margin-top: 3em
+    min-width: 930px
+    width: 100%
 .about
     display: flex
     flex-direction: row
@@ -253,19 +293,19 @@ section
 
 .content
     width: 80%
-    margin-bottom: 8em
+    margin: 6em 0
 
 #projects
     .content
         display: grid
+        width: 90%
         grid-template-columns: repeat(auto-fill, minmax(18em, 1fr))
-        justify-content: space-between
-        align-items: center
+        // justify-content: space-between
+        // align-items: center
     .card
         color: white
         background-size: cover
         padding: 9.3em 0 0
-        margin: 2em
         max-width: 23em
         min-width: 17em
         height: 16em
@@ -284,6 +324,10 @@ section
                     transition-delay: 400ms
                 .card-title::after
                     transform: scaleX(1)
+    .card-full
+        display: flex
+        justify-content: center
+        margin: 2em
     .card-content
         padding: 1rem
         background: linear-gradient(hsl(0 0% 0% / 0), hsl(0 0% 0% / 1))
@@ -339,7 +383,6 @@ a
             color: $accent
             transition: all 200ms ease
 
-
 @media screen and ( max-width: 1015px )
     .container
         height: 4em
@@ -363,6 +406,8 @@ a
             border-top-right-radius: 0
             z-index: 1
     @media screen and ( max-width: 960px )
+        #home
+            width: 98%
         .about
             flex-direction: column
             justify-content: space-around
@@ -372,8 +417,9 @@ a
         .title
             min-width: 22em
             font-size: .6em
-            .line
-                height: 20em
+            margin-left: 6em
+            p
+                line-height: 2em
         .about
             width: 100%
             .about-card
@@ -391,7 +437,7 @@ a
                 width: 90%
                 justify-content: center
                 align-items: center
-                margin-bottom: 2em
+                margin: 4em
                 ul
                     margin: 2em
                     list-style-type: none
@@ -408,3 +454,13 @@ a
         #footer
             i
                 margin: 0 .4em
+        #projects
+            .card
+                margin: 2em 0
+                padding: 7em 0
+    @media screen and ( max-width: 570px )
+        .title
+            .lastNumber
+                display: flex
+            .line
+                height: 20em
