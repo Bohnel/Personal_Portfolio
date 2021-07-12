@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="style.css">
     <title>Portfolio Max Ludwikowski</title>
 </head>
@@ -34,7 +35,7 @@
 
     <section id="home">
         <div class="title">
-            <div class="text">
+            <div data-aos="slide-right" class="text">
                 <div class="numbers">
                     <p>35</p>
                     <p>36</p>
@@ -115,7 +116,7 @@
             <h2>Skills</h2>
         </div>
         <div class="content">
-            <div class="left">
+            <div data-aos="slide-left" class="left">
                 <div class="skill-i">
                     <div class="icon">
                         <i class="fab fa-4x fa-html5"></i>
@@ -177,7 +178,7 @@
                     <p>Adobe Xd</p>
                 </div>
             </div>
-            <div class="left">
+            <div data-aos="slide-right" class="left">
                 <div class="skill-i">
                     <div class="icon">
                         <i class="fas fa-4x fa-calendar-alt"></i>
@@ -300,5 +301,9 @@
     </section>
 
     <script src="app.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({duration: 700});
+    </script>
 </body>
 </html>

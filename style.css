@@ -290,6 +290,9 @@ section:not(#footer) {
   margin-bottom: 4em;
 }
 
+#skill {
+  overflow: hidden;
+}
 #skill .content-mobile {
   display: none;
 }
@@ -514,7 +517,7 @@ a {
     overflow: hidden;
   }
   .about table {
-    min-width: 0;
+    min-width: 20em;
   }
 
   #skill .content {
@@ -564,6 +567,18 @@ a {
   .title .line {
     height: 20em;
   }
+}
+::-webkit-scrollbar {
+  width: 0.8em;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #999;
+  border-radius: 2em;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: gray;
 }
 
 /*# sourceMappingURL=style.css.map */

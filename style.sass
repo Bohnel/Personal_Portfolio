@@ -247,6 +247,7 @@ section
         margin-bottom: 4em
 
 #skill
+    overflow: hidden
     .content-mobile
         display: none
     .skill-i
@@ -428,7 +429,7 @@ a
                 min-width: 20em
                 overflow: hidden
             table
-                min-width: 0
+                min-width: 20em
         #skill
             .content
                 display: none
@@ -465,3 +466,11 @@ a
                 display: flex
             .line
                 height: 20em
+
+::-webkit-scrollbar 
+    width: .8em
+::-webkit-scrollbar-thumb 
+    background: $neutral
+    border-radius: 2em
+::-webkit-scrollbar-thumb:hover 
+    background: darken($neutral, 10%)
