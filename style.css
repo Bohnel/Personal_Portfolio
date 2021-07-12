@@ -517,7 +517,7 @@ a {
     overflow: hidden;
   }
   .about table {
-    min-width: 20em;
+    min-width: 100%;
   }
 
   #skill .content {
