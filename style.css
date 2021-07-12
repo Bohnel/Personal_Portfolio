@@ -438,6 +438,11 @@ section:not(#footer) {
   filter: brightness(0.8);
 }
 
+.d3 {
+  background: url("./src/d3.PNG");
+  filter: brightness(0.9);
+}
+
 a {
   text-decoration: none;
   color: #fff;
