@@ -4,12 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <script src="./node_modules/@glidejs/glide/dist/glide.min.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="./node_modules/@glidejs/glide/dist/css/glide.core.min.css">
     <link rel="stylesheet" href="style.css">
-    
     <title>Portfolio Max Ludwikowski</title>
 </head>
 <body>
@@ -419,24 +418,11 @@
             <a href="mailto:m.ludwikowski1@gmail.com"><i class="fas fa-3x fa-envelope-square"></i></a>
         </div>
     </section>
-    <script src="app.js"></script>
+    <script type="module" src="app.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script src="./node_modules/@glidejs/glide/dist/glide.min.js" type="module"></script>
+    
     <script>
         AOS.init({duration: 700});
-
-        new Glide(".images", {
-                type: 'carousel',
-                perView: 6,
-                autoplay: 1000,
-                hoverpause: false
-            }).mount();
-        new Glide(".hard", {
-                type: 'carousel',
-                perView: 5,
-                autoplay: 1200,
-                hoverpause: false
-            }).mount();
     </script>
 </body>
 </html>
