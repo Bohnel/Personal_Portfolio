@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="node_modules/@glidejs/glide/dist/glide.min.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="node_modules/@glidejs/glide/dist/css/glide.core.min.css">
     <link rel="stylesheet" href="style.css">
     
     <title>Portfolio Max Ludwikowski</title>
@@ -213,25 +215,130 @@
             </div>
         </div>
         <div class="content-mobile">
-            <ul>
-                <li>HTML5</li>
-                <li>CSS3</li>
-                <li>SASS</li>
-                <li>JavaScript</li>
-                <li>ReactJS</li>
-                <li>Java</li>
-                <li>Git</li>
-                <li>SQL</li>
-                <li>Photoshop</li>
-                <li>Adobe Xd</li>
-            </ul>
-            <ul>
-                <li>Time Management</li>
-                <li>Adaptability</li>
-                <li>Team Work</li>
-                <li>Creativity</li>
-                <li>Curiosity</li>
-            </ul>
+            <div class="left images glide">
+                <div class="glide__track" data-glide-el="track">
+                    <ul class="glide__slides">
+                        <li class="glide__slide">
+                            <div class="skill-i">
+                                <div class="icon">
+                                    <i class="fab fa-4x fa-html5"></i>
+                                </div>
+                                <p>HTML 5</p>
+                            </div>
+                        </li>
+                        <li class="glide__slide">
+                            <div class="skill-i">
+                                <div class="icon">
+                                    <i class="fab fa-4x fa-css3-alt"></i>
+                                </div>
+                                <p>CSS 3</p>
+                            </div>
+                        </li>
+                        <li class="glide__slide">
+                            <div class="skill-i">
+                                <div class="icon">
+                                    <i class="fab fa-4x fa-sass"></i>
+                                </div>
+                                <p>SASS</p>
+                            </div>
+                        </li>
+                        <li class="glide__slide">
+                            <div class="skill-i">
+                                <div class="icon">
+                                    <i class="fab fa-4x fa-js-square"></i>
+                                </div>
+                                <p>JavaScript</p>
+                            </div>
+                        </li>
+                        <li class="glide__slide">
+                            <div class="skill-i">
+                                <div class="icon">
+                                    <i class="fab fa-4x fa-react"></i>
+                                </div>
+                                <p>ReactJS</p>
+                            </div>
+                        </li>
+                        <li class="glide__slide">
+                            <div class="skill-i">
+                                <div class="icon">
+                                    <i class="fab fa-4x fa-java"></i>
+                                </div>
+                                <p>Java</p>
+                            </div>
+                        </li>
+                        <li class="glide__slide">
+                            <div class="skill-i">
+                                <div class="icon">
+                                    <i class="fab fa-4x fa-git-alt"></i>
+                                </div>
+                                <p>Git</p>
+                            </div>
+                        </li>
+                        <li class="glide__slide">
+                            <div class="skill-i">
+                                <div class="icon">
+                                    <img style="width:4.5em" src="https://img.icons8.com/material-rounded/96/000000/adobe-photoshop.png"/>
+                                </div>
+                                <p>Photoshop</p>
+                            </div>
+                        </li>
+                        <li class="glide__slide">
+                            <div class="skill-i">
+                                <div class="icon">
+                                    <img style="width: 4em" src="https://img.icons8.com/ios-filled/100/000000/adobe-xd.png"/>
+                                </div>
+                                <p>Adobe Xd</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                
+        </div>
+        <div class="left hard glide">
+            <div class="glide__track" data-glide-el="track">
+                <ul class="glide__slides">
+                    <li class="glide__slide">
+                        <div class="skill-i">
+                            <div class="icon">
+                                <i class="fas fa-4x fa-calendar-alt"></i>
+                            </div>
+                            <p>Time Management</p>
+                        </div>
+                    </li>
+                    <li class="glide__slide">
+                        <div class="skill-i">
+                            <div class="icon">
+                                <i class="fas fa-4x fa-puzzle-piece"></i>
+                            </div>
+                            <p>Adaptability</p>
+                        </div>
+                    </li>
+                    <li class="glide__slide">
+                        <div class="skill-i">
+                            <div class="icon">
+                                <i class="fas fa-4x fa-user-friends"></i>
+                            </div>
+                            <p>Team Work</p>
+                        </div>
+                    </li>
+                    <li class="glide__slide">
+                        <div class="skill-i">
+                            <div class="icon">
+                                <i class="fas fa-4x fa-palette"></i>
+                            </div>
+                            <p>Creativity</p>
+                        </div>
+                    </li>
+                    <li class="glide__slide">
+                        <div class="skill-i">
+                            <div class="icon">
+                                <i class="fas fa-4x fa-chalkboard-teacher"></i>
+                            </div>
+                            <p>Curiosity</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </div>
     </section>
 
@@ -316,6 +423,19 @@
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
         AOS.init({duration: 700});
+
+        new Glide(".images", {
+                type: 'carousel',
+                perView: 6,
+                autoplay: 1000,
+                hoverpause: false
+            }).mount();
+        new Glide(".hard", {
+                type: 'carousel',
+                perView: 5,
+                autoplay: 1200,
+                hoverpause: false
+            }).mount();
     </script>
 </body>
 </html>

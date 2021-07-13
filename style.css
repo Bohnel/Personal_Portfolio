@@ -300,6 +300,7 @@ section:not(#footer) {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
   position: relative;
 }
 #skill .skill-i:after {
@@ -529,12 +530,24 @@ a {
     display: none;
   }
   #skill .content-mobile {
-    display: flex;
+    display: block;
     color: white;
-    width: 90%;
+    width: 100%;
     justify-content: center;
     align-items: center;
     margin: 4em;
+  }
+  #skill .content-mobile .images {
+    height: 10em;
+    width: 100%;
+  }
+  #skill .content-mobile .hardskills {
+    background-color: blue;
+    height: 10em;
+    width: 100%;
+  }
+  #skill .content-mobile i {
+    font-size: 3em;
   }
   #skill .content-mobile ul {
     margin: 2em;
