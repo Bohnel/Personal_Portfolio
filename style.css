@@ -444,6 +444,11 @@ section:not(#footer) {
   filter: brightness(0.9);
 }
 
+.survey {
+  background: url("./src/survey.PNG");
+  filter: brightness(0.9);
+}
+
 a {
   text-decoration: none;
   color: #fff;
