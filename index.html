@@ -420,9 +420,21 @@
     </section>
     <script type="module" src="app.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    
+    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
     <script>
         AOS.init({duration: 700});
+        new Glide(".images", {
+    type: 'carousel',
+    perView: 6,
+    autoplay: 1000,
+    hoverpause: false
+}).mount();
+new Glide(".hard", {
+    type: 'carousel',
+    perView: 5,
+    autoplay: 1200,
+    hoverpause: false
+}).mount();
     </script>
 </body>
 </html>

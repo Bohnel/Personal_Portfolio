@@ -21,15 +21,3 @@ window.addEventListener('scroll', () => {
 })
 
 
-new Glide(".images", {
-    type: 'carousel',
-    perView: 6,
-    autoplay: 1000,
-    hoverpause: false
-}).mount();
-new Glide(".hard", {
-    type: 'carousel',
-    perView: 5,
-    autoplay: 1200,
-    hoverpause: false
-}).mount();
